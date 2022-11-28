@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2020.6.23)  28 NOV 2022 20:11
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2020.6.23)  28 NOV 2022 21:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1444,24 +1444,30 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 255.
 
-[3] 
+[3]
+File: 224-1_2_3_24.png Graphic file (type bmp)
+<224-1_2_3_24.png>
+ [4]
+File: 224-512_24.png Graphic file (type bmp)
+<224-512_24.png>
+ 
 AED: lastpage setting LastPage
-[4]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 337.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 337.
+[5]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 376.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 376.
  (./Кечак.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 337.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 337.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 376.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 376.
 Package rerunfilecheck Info: File `Кечак.out' has not changed.
 (rerunfilecheck)             Checksum: 67EA42E2CC1D52E3C3F5EA7E61F10C00;2655.
  ) 
 Here is how much of TeX's memory you used:
- 36452 strings out of 479277
- 858658 string characters out of 5883835
+ 36465 strings out of 479277
+ 858873 string characters out of 5883835
  1340212 words of memory out of 5000000
- 53443 multiletter control sequences out of 15000+600000
+ 53454 multiletter control sequences out of 15000+600000
  542153 words of font info for 105 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 63i,7n,98p,876b,479s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 63i,18n,98p,876b,479s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Кечак.pdf (4 pages).
+Output written on Кечак.pdf (5 pages).
