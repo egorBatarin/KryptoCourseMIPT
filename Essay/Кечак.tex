@@ -299,49 +299,40 @@
 	3. Переводим конечный массив $A'$ в строку $S'$
 	
 	
+	\section{Криптоанализ}
 	
-	\section{Исследование лавинного эффекта алгоритма Keccak в проекте}
+	На данный момент алгоритм Keccak является самым передомым и надежным среди всех существующих алгоритмов. Тем не менее, существуют известные попытки взлома алгоритма. Рассмотрим некоторые из них.
 	
-	По определению, хэш-функция обладает свойсвом лавинного эффекта, если при изменении одного бита входной последовательности меняется в среднем половина битов выходной последовательности. Цель проекта - проверить, выполняется ли данный критерий для алгоритма Keccak.
+	В работе [7] приводится алгоритм, позволяющий найти коллизии в 384-битной версии алгоритма Keccak с 4 раундами за практическое время $2^{59.65}$. Хотя данный алгоритм неприменим на практике из-за огромного вычислительного времени (иначе пришлось бы разрабатывать SHA-4), он дает существенные продвижения по эффективным аттакам на Keccak, демонстрируя большой выигрыш с предыдущими попытками с практическим временем $2^{147}$. 
 	
-	Для этого в проекте генерируются пары строк, отличающихся на один бит - входные последовательности. Далее сравнимаются выходные последовательности и считается количество измененных бит. По полученным данным строятся графики, на оси абсцисс которых отображен процент измененных бит, а ось ординат выражает меру количества таких строк. Стоит ожидать, что максимум графика будет достигаться при $50\%$.
+	Работа [8] представляет алгоритм поиска коллизий уже 6 раундовом алгоритме Keccak c временем $2^{123.5}$, причем с использованием квантовых вычислений достигается ускорение вплоть до $2^{67.35}$.
 	
-	Ниже приведена таблица, которая в зависимости от размера хэша и количества проведенных раундов показывает среднее значение модифицированных бит в процентах.
+	Аттака на прообраз описана в работе [9]. Здесь аттаки проводятся на алгоритме Keccak 384/512 c использованием линейных структур.
 	
-	% Please add the following required packages to your document preamble:
-	% \usepackage{multirow}
-	\begin{table}[h!]
+	
+	
+	\section{Применение}
+	
+	Один из самых ярких примеров использования алгоритма Keccak - криптовалюта Ethereum. Здесь этот алгоритм используется для хэширования Ethereum адресов.
+	
+	\begin{figure}[h!]
 		\centering
-		\begin{tabular}{|l|lllllll|}
-			\hline
-			\multirow{2}{*}{\begin{tabular}[c]{@{}l@{}}Размер\\ хэша\\\end{tabular}} & \multicolumn{7}{l|}{Число раундов}                                                                                                                                                         \\ \cline{2-8} 
-			& \multicolumn{1}{l|}{1}      & \multicolumn{1}{l|}{2}      & \multicolumn{1}{l|}{3}      & \multicolumn{1}{l|}{4}      & \multicolumn{1}{l|}{8}      & \multicolumn{1}{l|}{12}     & 24     \\ \hline
-			224                                                                           & \multicolumn{1}{l|}{37.995} & \multicolumn{1}{l|}{48.504} & \multicolumn{1}{l|}{50.041} & \multicolumn{1}{l|}{50.151} & \multicolumn{1}{l|}{50.196} & \multicolumn{1}{l|}{49.882} & 49.882 \\ \hline
-			256                                                                           & \multicolumn{1}{l|}{36.716} & \multicolumn{1}{l|}{48.32}  & \multicolumn{1}{l|}{49.991} & \multicolumn{1}{l|}{49.875} & \multicolumn{1}{l|}{50.067} & \multicolumn{1}{l|}{50.102} & 50.045 \\ \hline
-			384                                                                           & \multicolumn{1}{l|}{37.689} & \multicolumn{1}{l|}{48.609} & \multicolumn{1}{l|}{50.03}  & \multicolumn{1}{l|}{49.949} & \multicolumn{1}{l|}{50.092} & \multicolumn{1}{l|}{49.997} & 50.003 \\ \hline
-			512                                                                           & \multicolumn{1}{l|}{40.136} & \multicolumn{1}{l|}{49.256} & \multicolumn{1}{l|}{50.072} & \multicolumn{1}{l|}{49.996} & \multicolumn{1}{l|}{49.979} & \multicolumn{1}{l|}{49.999} & 49.981 \\ \hline
-		\end{tabular}
-	\end{table}
-	
-	Как видим, уже начиная с числа раундов, равным 3, лавинный эффект проявляется в полной мере.
-	
-	По графикам также можно сделать два качественных заключения по распределению доли модифицированных бит. Во-первых, начиная с третьего раунда, распределение очень хорошо аппроксимируется нормальным, как видно из картинки ниже.
-	
-	\begin{figure}[ht!]
-	\centering
-	\includegraphics[width=165mm]{224-1_2_3_24.png}
-	\caption{Хэш 224 бита с числом раундов 1, 2, 3 и 24}
+		\includegraphics[width=90mm]{3.png}
 	\end{figure}
-
-	\newpage
 	
-	Во-вторых, чем выше размер хэша, чем меньше дисперсия нормального распределенения. Ниже сравнение хэшей 224 и 512 бит с числом раундов, равным 24.
+	Сами адреса в Ethereum разделяются на два типа:
 	
-		\begin{figure}[ht!]
-		\centering
-		\includegraphics[width=180mm]{224-512_24.png}
-		\caption{Хэш 224 бита с числом раундов 1, 2, 3 и 24}
-	\end{figure}
+	1) External owned accounts (учетные записи, принадлежащие внешним пользователям, EOA): контролируются закрытыми ключами.
+	
+	2) Contract accounts (учетные записи смарт-контрактов, CA): самоуправляемы своим своим кодом.
+	
+	В Ethereum  адрес имеет размер в 20 байт . Он соответствует последним 20 байтам хэша Keccak-256 открытого ключа. Сама процедура создания адреса устроена следующим образом:
+	
+	1) Создается открытый ключ из закрытого с помощью ECDSA
+	
+	2) Применяем Keccak к открытому ключу
+	
+	3) Берем последние 20 байт из хэша - это адрес
 	
 	\section{Список литературы}
 	
@@ -358,11 +349,16 @@
 	
 	6.\ \href{https://ru.wikipedia.org/wiki/Функция_губки}{Статья в Википедии про функцию губки}
 	
-	7.\ \href{https://ru.wikipedia.org/wiki/Лавинный_эффект}{Статья в Википедии про лавинный эффект}
+	7.\ \href{https://docs.yandex.ru/docs/view?tm=1670581012&tld=ru&lang=en&name=194.pdf&text=Finding%20Collisions%20against%204-Round%20SHA-3-384%20in%20Practical%20Time&url=https%3A%2F%2Feprint.iacr.org%2F2022%2F194.pdf&lr=213&mime=pdf&l10n=ru&sign=df3555ad7abdca412bd3d1f72d819fd6&keyno=0&serpParams=tm%3D1670581012%26tld%3Dru%26lang%3Den%26name%3D194.pdf%26text%3DFinding%2BCollisions%2Bagainst%2B4-Round%2BSHA-3-384%2Bin%2BPractical%2BTime%26url%3Dhttps%253A%2F%2Feprint.iacr.org%2F2022%2F194.pdf%26lr%3D213%26mime%3Dpdf%26l10n%3Dru%26sign%3Ddf3555ad7abdca412bd3d1f72d819fd6%26keyno%3D0}{Finding Collisions against 4-Round SHA-3-384 in Practical Time}
 	
+	8.\ \href{https://docs.yandex.ru/docs/view?tm=1670581674&tld=ru&lang=en&name=184.pdf&text=Exploring%20SAT%20for%20Cryptanalysis%3A%20(Quantum)%20Collision%20Attacks%20against%206-Round%20SHA-3&url=https%3A%2F%2Feprint.iacr.org%2F2022%2F184.pdf&lr=214&mime=pdf&l10n=ru&sign=0b0eb5e3f96ac5853b282eebfebc9e20&keyno=0&serpParams=tm%3D1670581674%26tld%3Dru%26lang%3Den%26name%3D184.pdf%26text%3DExploring%2BSAT%2Bfor%2BCryptanalysis%253A%2B%2528Quantum%2529%2BCollision%2BAttacks%2Bagainst%2B6-Round%2BSHA-3%26url%3Dhttps%253A%2F%2Feprint.iacr.org%2F2022%2F184.pdf%26lr%3D214%26mime%3Dpdf%26l10n%3Dru%26sign%3D0b0eb5e3f96ac5853b282eebfebc9e20%26keyno%3D0}{ Exploring SAT for Cryptanalysis: (Quantum) Collision Attacks against 6-Round SHA-3}
 	
+	9.\
+	\href{https://docs.yandex.ru/docs/view?tm=1670582387&tld=ru&lang=en&name=788.pdf&text=Improved%20Preimage%20Attacks%20on%20Round-Reduced%20Keccak-384%2F512%20via%20Restricted%20Linear%20Structures&url=https%3A%2F%2Feprint.iacr.org%2F2022%2F788.pdf&lr=213&mime=pdf&l10n=ru&sign=d880f70fe33c1fb1f84165be0ce9440c&keyno=0&serpParams=tm%3D1670582387%26tld%3Dru%26lang%3Den%26name%3D788.pdf%26text%3DImproved%2BPreimage%2BAttacks%2Bon%2BRound-Reduced%2BKeccak-384%2F512%2Bvia%2BRestricted%2BLinear%2BStructures%26url%3Dhttps%253A%2F%2Feprint.iacr.org%2F2022%2F788.pdf%26lr%3D213%26mime%3Dpdf%26l10n%3Dru%26sign%3Dd880f70fe33c1fb1f84165be0ce9440c%26keyno%3D0}{Improved Preimage Attacks on Round-Reduced
+		Keccak-384/512 via Restricted Linear Structures}
 	
-	
+ 10.\ 
+ \href{https://habr.com/ru/post/572456/}{Учебник по Solidity. Все об адресах / Хабр}
 
 	
 

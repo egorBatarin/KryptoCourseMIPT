@@ -1,9 +1,9 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2020.6.23)  9 DEC 2022 21:32
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2020.6.23)  3 DEC 2022 14:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**Кечак.tex
-(./Кечак.tex
+**Описание.tex
+(./Описание.tex
 LaTeX2e <2020-02-02> patch level 5
 L3 programming layer <2020-06-18>
 (c:/texlive/2020/texmf-dist/tex/latex/base/article.cls
@@ -1192,8 +1192,8 @@ Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'russian'.
- (./Кечак.aux)
-\openout1 = `Кечак.aux'.
+ (./Описание.aux)
+\openout1 = `Описание.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 132.
 LaTeX Font Info:    ... okay on input line 132.
@@ -1206,7 +1206,8 @@ LaTeX Font Info:    ... okay on input line 132.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 132.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 1
 32.
- (c:/texlive/2020/texmf-dist/tex/latex/base/ts1cmr.fd
+
+(c:/texlive/2020/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 132.
@@ -1343,9 +1344,9 @@ LaTeX Info: Redefining \ref on input line 132.
 LaTeX Info: Redefining \pageref on input line 132.
 LaTeX Info: Redefining \nameref on input line 132.
 
-(./Кечак.out) (./Кечак.out)
+(./Описание.out) (./Описание.out)
 \@outlinefile=\write4
-\openout4 = `Кечак.out'.
+\openout4 = `Описание.out'.
 
  ABD: EveryShipout initializing macros
 
@@ -1364,107 +1365,33 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 135
 
 (c:/texlive/2020/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
+)
+File: 224-1_2_3_24.png Graphic file (type bmp)
+<224-1_2_3_24.png>
+ [1
 
 ]
-File: 1.jpg Graphic file (type bmp)
-<1.jpg>
-File: 2.png Graphic file (type bmp)
-<2.png>
- [2]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 213.
+File: 224-512_24.png Graphic file (type bmp)
+<224-512_24.png>
 
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 213.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 218.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\theta' on input line 218.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 218.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 230.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\rho' on input line 230.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 230.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 243.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\pi' on input line 243.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 243.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 249.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\chi' on input line 249.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 249.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 255.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\iota' on input line 255.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 255.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 255.
-
-[3]
-File: 3.png Graphic file (type bmp)
-<3.png>
- [4] 
 AED: lastpage setting LastPage
-[5]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 372.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 372.
- (./Кечак.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 372.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 372.
-Package rerunfilecheck Info: File `Кечак.out' has not changed.
-(rerunfilecheck)             Checksum: BD2B1491309E96AF4886AB9BBA59E7B6;2437.
+[2]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 180.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 180.
+ (./Описание.aux)
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 180.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 180.
+Package rerunfilecheck Info: File `Описание.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 36458 strings out of 479277
- 858700 string characters out of 5883835
- 1340212 words of memory out of 5000000
- 53448 multiletter control sequences out of 15000+600000
- 542153 words of font info for 105 fonts, out of 8000000 for 9000
+ 36423 strings out of 479277
+ 858104 string characters out of 5883835
+ 1338215 words of memory out of 5000000
+ 53421 multiletter control sequences out of 15000+600000
+ 540567 words of font info for 94 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 63i,7n,98p,876b,479s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 63i,18n,98p,773b,479s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Кечак.pdf (5 pages).
+Output written on Описание.pdf (2 pages).
